@@ -1,0 +1,210 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/estedad-font@v5.1.1/dist/font-face.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================
+ * THEME 1: LIGHT MODE (Default)
+ * Clean whites, deep blue primary, warm amber accent.
+ * ======================================================== */
+@layer base {
+  :root {
+    --font-estedad: 'Estedad', var(--font-vazirmatn), system-ui, sans-serif;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 71% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 71% 40%;
+
+    --radius: 0.5rem;
+
+    /* Sport-specific */
+    --score-win: 142 72% 36%;
+    --score-loss: 0 84% 60%;
+    --score-draw: 38 92% 50%;
+    --live: 0 84% 60%;
+  }
+
+  /* ========================================================
+   * THEME 2: DARK MODE
+   * Deep navy background, bright blue primary, amber accent.
+   * ====================================================== */
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 224 64% 33%;
+
+    --score-win: 142 72% 45%;
+    --score-loss: 0 84% 60%;
+    --score-draw: 38 92% 50%;
+    --live: 0 84% 60%;
+  }
+
+  /* ========================================================
+   * THEME 3: STADIUM GREEN
+   * Vibrant field green, white accent, deep forest text.
+   * ====================================================== */
+  .stadium {
+    --background: 138 76% 97%;
+    --foreground: 149 68% 12%;
+
+    --card: 140 50% 95%;
+    --card-foreground: 149 68% 12%;
+
+    --popover: 140 50% 95%;
+    --popover-foreground: 149 68% 12%;
+
+    --primary: 142 72% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 138 40% 90%;
+    --secondary-foreground: 149 68% 12%;
+
+    --muted: 138 30% 90%;
+    --muted-foreground: 149 30% 40%;
+
+    --accent: 142 72% 29%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 142 30% 82%;
+    --input: 142 30% 82%;
+    --ring: 142 72% 36%;
+
+    --score-win: 142 72% 36%;
+    --score-loss: 0 84% 60%;
+    --score-draw: 38 92% 50%;
+    --live: 0 84% 60%;
+  }
+
+  /* ========================================================
+   * THEME 4: NEON NIGHT
+   * Near-black bg, neon orange primary, electric cyan accent.
+   * ====================================================== */
+  .neon {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 90%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 18 100% 59%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 191 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 90%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 18 100% 59%;
+
+    --score-win: 142 72% 50%;
+    --score-loss: 0 84% 60%;
+    --score-draw: 191 100% 50%;
+    --live: 18 100% 59%;
+  }
+}
+
+/* ==========================================================
+ * BASE RESETS
+ * ======================================================== */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth theme transitions */
+  html {
+    @apply transition-colors duration-300;
+  }
+}
+
+/* ==========================================================
+ * CUSTOM UTILITIES
+ * ======================================================== */
+@layer utilities {
+  /* Hide scrollbar but keep scroll functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Gradient text helper */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* Glass morphism card effect */
+  .glass {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+}
